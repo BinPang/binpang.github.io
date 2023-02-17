@@ -52,14 +52,17 @@ func GrpcWrapperNoErr[Req, Resp any, RResp interface {
 	data, err := f(ctx, req, opts...)
 	if err != nil {
 		// log
-		return nil
+		ret := new(Resp)
+		wrapErr := reflect.ValueOf(&proto.RpcHeader{Code: 500, Message: "system_busy"})
+		reflect.ValueOf(ret).Elem().FieldByName("Header").Set(wrapErr)
+		return ret
 	}
 	pData := RResp(data)
 	if pData.GetHeader().GetCode() != 0 {
 		// log
-		return nil
+		return data
 	}
-
+	// debug log
 	return data
 }
 ```

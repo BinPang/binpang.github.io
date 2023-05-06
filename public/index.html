@@ -71,6 +71,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/05/06/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2023-05-06T10:39:03.836Z" itemprop="datePublished">2023-05-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/05/06/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/06/hello-world/" data-id="clhbuu88e000bpa4b1poffp2s" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2023-05-06-redis-zcount" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/05/06/2023-05-06-redis-zcount/" class="article-date">
@@ -110,245 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/06/2023-05-06-redis-zcount/" data-id="clhbtg9bo000bgg4b58prbz2p" data-title="计算最近一段时间的总数量" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-1-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-1-1/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-1-1/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>mysql源码编译安装</p>
-<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="../2023-02-17-mysql-content.md">https://dev.mysql.com/doc/refman/8.0/en/debugging-mysql.html</a></p>
-<h3 id="开启debug模式"><a href="#开启debug模式" class="headerlink" title="开启debug模式"></a>开启debug模式</h3><p>当mysqld运行时，需要指定参数<code>--debug</code>，那么在生成<code>/tmp/mysqld.trace</code> 文件，像官网提示的那样，该文件非常大</p>
-<p>我们需要在执行时</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">T@8: | | | &lt;vio_io_wait</span><br><span class="line">T@8: | | &lt;vio_ssl_read</span><br><span class="line">T@8: | &lt;net_read_raw_loop</span><br><span class="line">T@8: | THD::enter_stage: &#x27;starting&#x27; /Users/mico/code/open_source/mysql-server/sql/conn_handler/init_net_server_extension.cc:103</span><br><span class="line">T@8: | &gt;PROFILING::status_change</span><br><span class="line">...</span><br><span class="line">T@8: | | | | | | &lt;void handler::column_bitmaps_signal</span><br><span class="line">T@8: | | | | | | &gt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &lt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &gt;fill_record</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | &lt;fill_record</span><br><span class="line">T@8: | | | | | | &gt;write_record</span><br><span class="line">T@8: | | | | | | | &gt;handler::ha_write_row</span><br><span class="line">T@8: | | | | | | | | &gt;int ha_innobase::write_row</span><br><span class="line">T@8: | | | | | | | | | &gt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | | ha_innobase::update_thd: user_thd: 0x12880e200 -&gt; 0x12880e200</span><br><span class="line">T@8: | | | | | | | | | | | &gt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | | &lt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: 2</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: next value 3</span><br><span class="line">T@8: | | | | | | | | | &lt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | &gt;row_ins</span><br><span class="line">T@8: | | | | | | | | | | row_ins: table: demo/user_info</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | ib_cur: insert PRIMARY (158) by 4381: TUPLE (info_bits=0, 6 n_cmp=1, fields): &#123;[8]        (0x0000000000000002),[6]      (0x00000000111d),[7]       (0x82000001090110),[8]        (0x00000000000003e9),[8]pangbian(0x70616e676269616e),[a]1990-08-12(0x313939302d30382d3132)&#125;</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | &lt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | &lt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_sec_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h3 id="调试程序"><a href="#调试程序" class="headerlink" title="调试程序"></a>调试程序</h3><p>虽然有debug日志，但是信息还是比较少的，当需要</p>
-<h4 id="clion"><a href="#clion" class="headerlink" title="clion"></a>clion</h4><p>clion是一款比较方便的ide，只需要在某行代码的左侧单击一下就可以下断点，例如</p>
-<h4 id="gdb-lldb"><a href="#gdb-lldb" class="headerlink" title="gdb(lldb)"></a>gdb(lldb)</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-1-1/" data-id="clhbtg9bo000dgg4bc4208nnv" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-2-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>mysql的连接管理</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
-<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
-<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-2/" data-id="clhbtg9bo000ggg4b5yd6atac" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-1-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>对于像Mysql这样的大型项目，我们</p>
-<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="../2023-02-17-mysql-content.md">https://dev.mysql.com/doc/refman/8.0/en/debugging-mysql.html</a></p>
-<h3 id="开启debug模式"><a href="#开启debug模式" class="headerlink" title="开启debug模式"></a>开启debug模式</h3><p>当mysqld运行时，需要指定参数<code>--debug</code>，那么在生成<code>/tmp/mysqld.trace</code> 文件，像官网提示的那样，该文件非常大</p>
-<p>我们需要在执行时</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">T@8: | | | &lt;vio_io_wait</span><br><span class="line">T@8: | | &lt;vio_ssl_read</span><br><span class="line">T@8: | &lt;net_read_raw_loop</span><br><span class="line">T@8: | THD::enter_stage: &#x27;starting&#x27; /Users/mico/code/open_source/mysql-server/sql/conn_handler/init_net_server_extension.cc:103</span><br><span class="line">T@8: | &gt;PROFILING::status_change</span><br><span class="line">...</span><br><span class="line">T@8: | | | | | | &lt;void handler::column_bitmaps_signal</span><br><span class="line">T@8: | | | | | | &gt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &lt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &gt;fill_record</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | &lt;fill_record</span><br><span class="line">T@8: | | | | | | &gt;write_record</span><br><span class="line">T@8: | | | | | | | &gt;handler::ha_write_row</span><br><span class="line">T@8: | | | | | | | | &gt;int ha_innobase::write_row</span><br><span class="line">T@8: | | | | | | | | | &gt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | | ha_innobase::update_thd: user_thd: 0x12880e200 -&gt; 0x12880e200</span><br><span class="line">T@8: | | | | | | | | | | | &gt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | | &lt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: 2</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: next value 3</span><br><span class="line">T@8: | | | | | | | | | &lt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | &gt;row_ins</span><br><span class="line">T@8: | | | | | | | | | | row_ins: table: demo/user_info</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | ib_cur: insert PRIMARY (158) by 4381: TUPLE (info_bits=0, 6 n_cmp=1, fields): &#123;[8]        (0x0000000000000002),[6]      (0x00000000111d),[7]       (0x82000001090110),[8]        (0x00000000000003e9),[8]pangbian(0x70616e676269616e),[a]1990-08-12(0x313939302d30382d3132)&#125;</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | &lt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | &lt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_sec_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-<h3 id="调试程序"><a href="#调试程序" class="headerlink" title="调试程序"></a>调试程序</h3><p>虽然有debug日志，但是信息还是比较少的，当需要</p>
-<h4 id="clion"><a href="#clion" class="headerlink" title="clion"></a>clion</h4><p>clion是一款比较方便的ide，只需要在某行代码的左侧单击一下就可以下断点，例如</p>
-<h4 id="gdb-lldb"><a href="#gdb-lldb" class="headerlink" title="gdb(lldb)"></a>gdb(lldb)</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-1-2/" data-id="clhbtg9bp000hgg4b75nthiz8" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-2-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>通信协议</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
-<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
-<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-3/" data-id="clhbtg9bp000kgg4b0v4cac5l" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-4-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-4-1/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-4-1/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>innodb表结构</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
-<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
-<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-4-1/" data-id="clhbtg9bp000lgg4b0qh8birc" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/05/06/2023-05-06-redis-zcount/" data-id="clhbuu88e0007pa4bcs0jgir1" data-title="计算最近一段时间的总数量" class="article-share-link">Share</a>
       
       
       
@@ -404,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-0-0/" data-id="clhbtg9bq000ogg4b9rzh1fc1" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-0-0/" data-id="clhbuu88f000dpa4b41qfaqdr" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -416,9 +229,9 @@
 
 
   
-    <article id="post-mysql/2023-02-17-mysql-4-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-mysql/2023-02-17-mysql-1-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-4-2/" class="article-date">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-1-1/" class="article-date">
   <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
 </a>
     
@@ -434,7 +247,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-4-2/">如何阅读MySQL源代码</a>
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-1-1/">如何阅读MySQL源代码</a>
     </h1>
   
 
@@ -442,7 +255,107 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>innodb 行结构</p>
+        <p>mysql源码编译安装</p>
+<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="../2023-02-17-mysql-content.md">https://dev.mysql.com/doc/refman/8.0/en/debugging-mysql.html</a></p>
+<h3 id="开启debug模式"><a href="#开启debug模式" class="headerlink" title="开启debug模式"></a>开启debug模式</h3><p>当mysqld运行时，需要指定参数<code>--debug</code>，那么在生成<code>/tmp/mysqld.trace</code> 文件，像官网提示的那样，该文件非常大</p>
+<p>我们需要在执行时</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">T@8: | | | &lt;vio_io_wait</span><br><span class="line">T@8: | | &lt;vio_ssl_read</span><br><span class="line">T@8: | &lt;net_read_raw_loop</span><br><span class="line">T@8: | THD::enter_stage: &#x27;starting&#x27; /Users/mico/code/open_source/mysql-server/sql/conn_handler/init_net_server_extension.cc:103</span><br><span class="line">T@8: | &gt;PROFILING::status_change</span><br><span class="line">...</span><br><span class="line">T@8: | | | | | | &lt;void handler::column_bitmaps_signal</span><br><span class="line">T@8: | | | | | | &gt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &lt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &gt;fill_record</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | &lt;fill_record</span><br><span class="line">T@8: | | | | | | &gt;write_record</span><br><span class="line">T@8: | | | | | | | &gt;handler::ha_write_row</span><br><span class="line">T@8: | | | | | | | | &gt;int ha_innobase::write_row</span><br><span class="line">T@8: | | | | | | | | | &gt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | | ha_innobase::update_thd: user_thd: 0x12880e200 -&gt; 0x12880e200</span><br><span class="line">T@8: | | | | | | | | | | | &gt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | | &lt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: 2</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: next value 3</span><br><span class="line">T@8: | | | | | | | | | &lt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | &gt;row_ins</span><br><span class="line">T@8: | | | | | | | | | | row_ins: table: demo/user_info</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | ib_cur: insert PRIMARY (158) by 4381: TUPLE (info_bits=0, 6 n_cmp=1, fields): &#123;[8]        (0x0000000000000002),[6]      (0x00000000111d),[7]       (0x82000001090110),[8]        (0x00000000000003e9),[8]pangbian(0x70616e676269616e),[a]1990-08-12(0x313939302d30382d3132)&#125;</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | &lt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | &lt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_sec_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="调试程序"><a href="#调试程序" class="headerlink" title="调试程序"></a>调试程序</h3><p>虽然有debug日志，但是信息还是比较少的，当需要</p>
+<h4 id="clion"><a href="#clion" class="headerlink" title="clion"></a>clion</h4><p>clion是一款比较方便的ide，只需要在某行代码的左侧单击一下就可以下断点，例如</p>
+<h4 id="gdb-lldb"><a href="#gdb-lldb" class="headerlink" title="gdb(lldb)"></a>gdb(lldb)</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-1-1/" data-id="clhbuu88f000gpa4b1jbbbwfv" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-1-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>对于像Mysql这样的大型项目，我们</p>
+<h3 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h3><p><a href="../2023-02-17-mysql-content.md">https://dev.mysql.com/doc/refman/8.0/en/debugging-mysql.html</a></p>
+<h3 id="开启debug模式"><a href="#开启debug模式" class="headerlink" title="开启debug模式"></a>开启debug模式</h3><p>当mysqld运行时，需要指定参数<code>--debug</code>，那么在生成<code>/tmp/mysqld.trace</code> 文件，像官网提示的那样，该文件非常大</p>
+<p>我们需要在执行时</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">T@8: | | | &lt;vio_io_wait</span><br><span class="line">T@8: | | &lt;vio_ssl_read</span><br><span class="line">T@8: | &lt;net_read_raw_loop</span><br><span class="line">T@8: | THD::enter_stage: &#x27;starting&#x27; /Users/mico/code/open_source/mysql-server/sql/conn_handler/init_net_server_extension.cc:103</span><br><span class="line">T@8: | &gt;PROFILING::status_change</span><br><span class="line">...</span><br><span class="line">T@8: | | | | | | &lt;void handler::column_bitmaps_signal</span><br><span class="line">T@8: | | | | | | &gt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &lt;validate_default_values_of_unset_fields</span><br><span class="line">T@8: | | | | | | &gt;fill_record</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &gt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | | &lt;Item::save_in_field</span><br><span class="line">T@8: | | | | | | &lt;fill_record</span><br><span class="line">T@8: | | | | | | &gt;write_record</span><br><span class="line">T@8: | | | | | | | &gt;handler::ha_write_row</span><br><span class="line">T@8: | | | | | | | | &gt;int ha_innobase::write_row</span><br><span class="line">T@8: | | | | | | | | | &gt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | | ha_innobase::update_thd: user_thd: 0x12880e200 -&gt; 0x12880e200</span><br><span class="line">T@8: | | | | | | | | | | | &gt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | | &lt;innobase_trx_init</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::update_thd</span><br><span class="line">T@8: | | | | | | | | | | &gt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | &lt;ha_innobase::innobase_lock_autoinc</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: 2</span><br><span class="line">T@8: | | | | | | | | | | info: auto_increment: next value 3</span><br><span class="line">T@8: | | | | | | | | | &lt;handler::update_auto_increment</span><br><span class="line">T@8: | | | | | | | | | &gt;row_ins</span><br><span class="line">T@8: | | | | | | | | | | row_ins: table: demo/user_info</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | | ib_cur: insert PRIMARY (158) by 4381: TUPLE (info_bits=0, 6 n_cmp=1, fields): &#123;[8]        (0x0000000000000002),[6]      (0x00000000111d),[7]       (0x82000001090110),[8]        (0x00000000000003e9),[8]pangbian(0x70616e676269616e),[a]1990-08-12(0x313939302d30382d3132)&#125;</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;row_ins_clust_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | &lt;row_ins_clust_index_entry</span><br><span class="line">T@8: | | | | | | | | | | &lt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | &gt;row_ins_index_entry_step</span><br><span class="line">T@8: | | | | | | | | | | | &gt;row_ins_sec_index_entry_low</span><br><span class="line">T@8: | | | | | | | | | | | | &gt;btr_cur_search_to_nth_level</span><br><span class="line">T@8: | | | | | | | | | | | | &lt;btr_cur_search_to_nth_level</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="调试程序"><a href="#调试程序" class="headerlink" title="调试程序"></a>调试程序</h3><p>虽然有debug日志，但是信息还是比较少的，当需要</p>
+<h4 id="clion"><a href="#clion" class="headerlink" title="clion"></a>clion</h4><p>clion是一款比较方便的ide，只需要在某行代码的左侧单击一下就可以下断点，例如</p>
+<h4 id="gdb-lldb"><a href="#gdb-lldb" class="headerlink" title="gdb(lldb)"></a>gdb(lldb)</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-1-2/" data-id="clhbuu88g000hpa4b1usc544u" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-2-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>mysql的连接管理</p>
 <h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
 <h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
 <h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
@@ -450,7 +363,120 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-4-2/" data-id="clhbtg9bq000pgg4b965jfprj" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-2/" data-id="clhbuu88g000kpa4bcorq0akq" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-2-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-1/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-1/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
+<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-1/" data-id="clhbuu88g000lpa4bfxl34p7r" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-2-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-4/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-4/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>mysql的通信协议</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>名字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int&lt;3&gt;</td>
+<td>消息体长度</td>
+<td></td>
+</tr>
+<tr>
+<td>int&lt;1&gt;</td>
+<td>序号</td>
+<td></td>
+</tr>
+<tr>
+<td>string<var></td>
+<td>payload</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>例如：<code>01 00 00 00 01</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-4/" data-id="clhbuu88h000opa4bdv2p4g3i" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -496,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-3-1/" data-id="clhbtg9bq000sgg4bdhvdhkz5" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-3-1/" data-id="clhbuu88h000ppa4batjvd38n" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -508,9 +534,9 @@
 
 
   
-    <article id="post-mysql/2023-02-17-mysql-2-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-mysql/2023-02-17-mysql-2-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-1/" class="article-date">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/" class="article-date">
   <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
 </a>
     
@@ -526,7 +552,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-1/">如何阅读MySQL源代码</a>
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
     </h1>
   
 
@@ -534,14 +560,15 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+        <p>通信协议</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
 <h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
 <h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-1/" data-id="clhbtg9bq000tgg4bddt003cp" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-3/" data-id="clhbuu88h000spa4b6d8s3s76" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -596,7 +623,15 @@
       <ul>
         
           <li>
+            <a href="/2023/05/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/06/2023-05-06-redis-zcount/">计算最近一段时间的总数量</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-0-0/">如何阅读MySQL源代码</a>
           </li>
         
           <li>
@@ -604,15 +639,7 @@
           </li>
         
           <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
             <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
           </li>
         
       </ul>

@@ -71,6 +71,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql/2023-02-17-mysql-7-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-7-2/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-7-2/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>binlog同步</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
+<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-7-2/" data-id="clhbuu88k001hpa4bat8tb53w" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-2023-02-17-mysql-content" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/02/17/2023-02-17-mysql-content/" class="article-date">
@@ -102,82 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/02/17/2023-02-17-mysql-content/" data-id="clhbtg9bn0008gg4bbkrl4511" data-title="目录" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2022-12-28-raft" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/12/19/2022-12-28-raft/" class="article-date">
-  <time class="dt-published" datetime="2022-12-18T16:00:00.000Z" itemprop="datePublished">2022-12-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/12/19/2022-12-28-raft/">raft</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是一致性"><a href="#什么是一致性" class="headerlink" title="什么是一致性"></a>什么是一致性</h2><p>分布式系统中，一份数据一般会存在多个副本，要求多副本数据对于数据的更新与单份数据相同</p>
-<p>几点需要注意的</p>
-<ul>
-<li>如果是单机系统，通过锁与事务等机制就能保证一致性</li>
-<li>如果是分布式系统，数据如果只有一份并且这份数据固定在某台机器上，那么可以当成单机系统</li>
-<li>如果是分布式系统，数据如果只有一份并且这份数据可以在多个副本间迁移，那么在迁移过程中可以等待迁移完成，或者给访问者提示系统繁忙，稍后重试</li>
-<li>如果在某一时刻A&#x3D;3，然后被修改成了4，再次获取到的就是A&#x3D;4，这里就不是一致性讨论的问题了</li>
-</ul>
-<p>在客户端与分布式系统（包括单机系统）通过网络交互时，由于网络不可靠，存在3种可能</p>
-<ul>
-<li>客户端感知失败，分布式系统也失败，例如：客户端与系统网络不通</li>
-<li>客户端感知失败，分布式系统成功，例如：在分布式系统执行成功后，向客户端发送失败</li>
-<li>客户端感知成功，在这种情况下，我们默认会认为分布式系统是成功的，除非分布式系统出现bug</li>
-</ul>
-<p>注意当需要幂等时，这时需要客户端与服务端使用唯一标识符进行幂等操作</p>
-<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>我们用客户端(C)请求服务端(S)的请求(Q)的各种情况说明为什么要这么做<br>C：客户端请求<br>S：服务器<br>Q：请求</p>
-<p>我们的Q可以是任意值，例如：uid1给uid2转账2元，</p>
-<h3 id="一台服务器"><a href="#一台服务器" class="headerlink" title="一台服务器"></a>一台服务器</h3><p>C请求S失败了，那么C需要重试，当然如果有幂等情况，需要C自己保证(例如：Q&#x3D;用户A给用户B转账5元，通常Q&#x3D;用户A给用户B转账5元且唯一Id&#x3D;唯一ID)</p>
-<p>如果S挂了，那么服务就彻底不可用了，考虑到极端的情况：如果S所在的机房发生火灾、地震、磁盘损坏等情况，那么数据也就丢失了</p>
-<h3 id="两台服务器"><a href="#两台服务器" class="headerlink" title="两台服务器"></a>两台服务器</h3><p>当然一台服务发现S挂了，服务就会停止运行</p>
-<p>当然2台服务器我们首先想到的就是主从结构，S1做主，S2做从。执行在S1上执行，S1讲执行的Q通过binlog的方式同步到S2<br>因此正常情况下Q在S1、S2上都会按照同样的顺序执行</p>
-<p>异常情况<br>如果C写S1成功后，S1还未同步给S2，S1挂了，那么S1执行了，而S2未执行导致不一致</p>
-<p>显然造成的原因是S1的binlog未能顺利同步到S2，那么比较简单了</p>
-<p>C写S1后，S1先不给C返回，而是将binlog同步到S2，待S2确定后反馈给S1，这时S1才反馈给C</p>
-<p>但是这里有个特别大的问题就是，如果S2挂了，那么服务是不可用的</p>
-<h3 id="3台服务器-多台"><a href="#3台服务器-多台" class="headerlink" title="3台服务器(多台)"></a>3台服务器(多台)</h3><p>通过前面讨论，1台&amp;2台服务器都是满足不了的，那么<br>如果3台服务器，挂了一台能满足整个系统的可用性也是能满足条件的</p>
-<p>我们在一台服务中能看到典型的就是服务器挂掉后，服务就不可用了，自然我们能想到的就是用2台机器，如果一台挂了，那么</p>
-<ol>
-<li>1台服务器(S)，C请求S失败了，那么C需要重试，当然如果有幂等情况，需要C自己保证(例如：Q&#x3D;用户A给用户B转账5元，通常Q&#x3D;用户A给用户B转账5元且唯一Id&#x3D;123)</li>
-<li>1台服务器(S)，如果S挂了，那么服务不可用</li>
-<li>2台服务器主从(S1主, S2从)，C写S1(Q1)成功后返回给C成功了，S1还未同步到S2时，S1挂了，那么Q1将丢失</li>
-<li>2台服务器主从(S1主, S2从)，C写S1(Q1)后，S1同步binlog到S2，S1挂了，那么Q1将丢失<br>有如下业务场景<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client ----&gt; server</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/19/2022-12-28-raft/" data-id="clhbtg9bm0004gg4b0vft0yy2" data-title="raft" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/02/17/2023-02-17-mysql-content/" data-id="clhbuu88e0008pa4b2xy52hye" data-title="目录" class="article-share-link">Share</a>
       
       
       
@@ -276,7 +247,82 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/12/19/2022-12-19-lcs/" data-id="clhbtg9bn0007gg4b1arlgaaj" data-title="lcs" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/12/19/2022-12-19-lcs/" data-id="clhbuu88c0003pa4b82gs0zk7" data-title="lcs" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-2022-12-28-raft" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/12/19/2022-12-28-raft/" class="article-date">
+  <time class="dt-published" datetime="2022-12-18T16:00:00.000Z" itemprop="datePublished">2022-12-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/12/19/2022-12-28-raft/">raft</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是一致性"><a href="#什么是一致性" class="headerlink" title="什么是一致性"></a>什么是一致性</h2><p>分布式系统中，一份数据一般会存在多个副本，要求多副本数据对于数据的更新与单份数据相同</p>
+<p>几点需要注意的</p>
+<ul>
+<li>如果是单机系统，通过锁与事务等机制就能保证一致性</li>
+<li>如果是分布式系统，数据如果只有一份并且这份数据固定在某台机器上，那么可以当成单机系统</li>
+<li>如果是分布式系统，数据如果只有一份并且这份数据可以在多个副本间迁移，那么在迁移过程中可以等待迁移完成，或者给访问者提示系统繁忙，稍后重试</li>
+<li>如果在某一时刻A&#x3D;3，然后被修改成了4，再次获取到的就是A&#x3D;4，这里就不是一致性讨论的问题了</li>
+</ul>
+<p>在客户端与分布式系统（包括单机系统）通过网络交互时，由于网络不可靠，存在3种可能</p>
+<ul>
+<li>客户端感知失败，分布式系统也失败，例如：客户端与系统网络不通</li>
+<li>客户端感知失败，分布式系统成功，例如：在分布式系统执行成功后，向客户端发送失败</li>
+<li>客户端感知成功，在这种情况下，我们默认会认为分布式系统是成功的，除非分布式系统出现bug</li>
+</ul>
+<p>注意当需要幂等时，这时需要客户端与服务端使用唯一标识符进行幂等操作</p>
+<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>我们用客户端(C)请求服务端(S)的请求(Q)的各种情况说明为什么要这么做<br>C：客户端请求<br>S：服务器<br>Q：请求</p>
+<p>我们的Q可以是任意值，例如：uid1给uid2转账2元，</p>
+<h3 id="一台服务器"><a href="#一台服务器" class="headerlink" title="一台服务器"></a>一台服务器</h3><p>C请求S失败了，那么C需要重试，当然如果有幂等情况，需要C自己保证(例如：Q&#x3D;用户A给用户B转账5元，通常Q&#x3D;用户A给用户B转账5元且唯一Id&#x3D;唯一ID)</p>
+<p>如果S挂了，那么服务就彻底不可用了，考虑到极端的情况：如果S所在的机房发生火灾、地震、磁盘损坏等情况，那么数据也就丢失了</p>
+<h3 id="两台服务器"><a href="#两台服务器" class="headerlink" title="两台服务器"></a>两台服务器</h3><p>当然一台服务发现S挂了，服务就会停止运行</p>
+<p>当然2台服务器我们首先想到的就是主从结构，S1做主，S2做从。执行在S1上执行，S1讲执行的Q通过binlog的方式同步到S2<br>因此正常情况下Q在S1、S2上都会按照同样的顺序执行</p>
+<p>异常情况<br>如果C写S1成功后，S1还未同步给S2，S1挂了，那么S1执行了，而S2未执行导致不一致</p>
+<p>显然造成的原因是S1的binlog未能顺利同步到S2，那么比较简单了</p>
+<p>C写S1后，S1先不给C返回，而是将binlog同步到S2，待S2确定后反馈给S1，这时S1才反馈给C</p>
+<p>但是这里有个特别大的问题就是，如果S2挂了，那么服务是不可用的</p>
+<h3 id="3台服务器-多台"><a href="#3台服务器-多台" class="headerlink" title="3台服务器(多台)"></a>3台服务器(多台)</h3><p>通过前面讨论，1台&amp;2台服务器都是满足不了的，那么<br>如果3台服务器，挂了一台能满足整个系统的可用性也是能满足条件的</p>
+<p>我们在一台服务中能看到典型的就是服务器挂掉后，服务就不可用了，自然我们能想到的就是用2台机器，如果一台挂了，那么</p>
+<ol>
+<li>1台服务器(S)，C请求S失败了，那么C需要重试，当然如果有幂等情况，需要C自己保证(例如：Q&#x3D;用户A给用户B转账5元，通常Q&#x3D;用户A给用户B转账5元且唯一Id&#x3D;123)</li>
+<li>1台服务器(S)，如果S挂了，那么服务不可用</li>
+<li>2台服务器主从(S1主, S2从)，C写S1(Q1)成功后返回给C成功了，S1还未同步到S2时，S1挂了，那么Q1将丢失</li>
+<li>2台服务器主从(S1主, S2从)，C写S1(Q1)后，S1同步binlog到S2，S1挂了，那么Q1将丢失<br>有如下业务场景<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client ----&gt; server</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/12/19/2022-12-28-raft/" data-id="clhbuu88c0004pa4b8bfj66ut" data-title="raft" class="article-share-link">Share</a>
       
       
       
@@ -326,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/21/2022-11-21-grpc-wrapper/" data-id="clhbtg9bl0003gg4ba5vta4bc" data-title="golang grpc response wrapper" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/21/2022-11-21-grpc-wrapper/" data-id="clhbuu88a0001pa4b2kgn3hp2" data-title="golang grpc response wrapper" class="article-share-link">Share</a>
       
       
       
@@ -387,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/11/21/2023-02-10-grpc-biz-err/" data-id="clhbtg9bm0005gg4b6u90gjvx" data-title="golang grpc response biz err" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/11/21/2023-02-10-grpc-biz-err/" data-id="clhbuu88d0005pa4b1xs4f8sf" data-title="golang grpc response biz err" class="article-share-link">Share</a>
       
       
       
@@ -449,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/13/2022-10-13-golang-err/" data-id="clhbtg9bi0000gg4bfwg2h2uo" data-title="golang 业务 error封装" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/10/13/2022-10-13-golang-err/" data-id="clhbuu8880000pa4b73ckdamp" data-title="golang 业务 error封装" class="article-share-link">Share</a>
       
       
       
@@ -504,7 +550,15 @@
       <ul>
         
           <li>
+            <a href="/2023/05/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/06/2023-05-06-redis-zcount/">计算最近一段时间的总数量</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-0-0/">如何阅读MySQL源代码</a>
           </li>
         
           <li>
@@ -512,15 +566,7 @@
           </li>
         
           <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
             <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
           </li>
         
       </ul>

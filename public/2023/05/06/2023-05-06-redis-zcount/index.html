@@ -14,7 +14,7 @@
 <meta property="og:description" content="背景最近有一个业务需求：计算最近24小时、最近3天的id数量 解决方案方案一如果使用MySQL，当然很方便，记录数据id,ctime, 直接使用select count(id) from xx where ctime &gt; yy即可，显然当查询的ctime比较短&amp;数据量比较小时，直接命中覆盖索引会非常快，当时当ctime比较长&amp;数据量比较多时会比较慢 方案二我们存储本来一开始就">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-06T10:06:01.933Z">
+<meta property="article:modified_time" content="2023-05-06T10:40:12.758Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/05/06/2023-05-06-redis-zcount/" data-id="clhbtg9bo000bgg4b58prbz2p" data-title="计算最近一段时间的总数量" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/05/06/2023-05-06-redis-zcount/" data-id="clhbuu88e0007pa4bcs0jgir1" data-title="计算最近一段时间的总数量" class="article-share-link">Share</a>
       
       
       
@@ -122,8 +122,17 @@
     
 <nav id="article-nav">
   
+    <a href="/2023/05/06/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-1-1/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-0-0/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">如何阅读MySQL源代码</div>
     </a>
@@ -170,7 +179,15 @@
       <ul>
         
           <li>
+            <a href="/2023/05/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/06/2023-05-06-redis-zcount/">计算最近一段时间的总数量</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-0-0/">如何阅读MySQL源代码</a>
           </li>
         
           <li>
@@ -178,15 +195,7 @@
           </li>
         
           <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
             <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
           </li>
         
       </ul>

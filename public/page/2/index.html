@@ -71,9 +71,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-mysql/2023-02-17-mysql-2-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-mysql/2023-02-17-mysql-4-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-2-4/" class="article-date">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-4-1/" class="article-date">
   <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
 </a>
     
@@ -89,7 +89,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-2-4/">如何阅读MySQL源代码</a>
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-4-1/">如何阅读MySQL源代码</a>
     </h1>
   
 
@@ -97,37 +97,61 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>mysql的通信协议</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>名字</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>int&lt;3&gt;</td>
-<td>消息体长度</td>
-<td></td>
-</tr>
-<tr>
-<td>int&lt;1&gt;</td>
-<td>序号</td>
-<td></td>
-</tr>
-<tr>
-<td>string<var></td>
-<td>payload</td>
-<td></td>
-</tr>
-</tbody></table>
-<p>例如：<code>01 00 00 00 01</code></p>
+        <p>innodb表结构</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
+<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-2-4/" data-id="clhbtg9br000vgg4bb7ql7am6" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-4-1/" data-id="clhbuu88h000tpa4bbd5labch" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-4-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-4-2/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-4-2/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>innodb 行结构</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
+<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-4-2/" data-id="clhbuu88i000wpa4bhvi49bz7" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -173,99 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-2/" data-id="clhbtg9br000ygg4b66un8ziq" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-5-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-5-4/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-5-4/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>事务 多版本控制</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
-<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
-<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-4/" data-id="clhbtg9br0010gg4b96nicgoj" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-5-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-5-3/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-5-3/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>事务 undo</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
-<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
-<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-3/" data-id="clhbtg9bs0013gg4b0l2eesk9" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-2/" data-id="clhbuu88i000ypa4b7tcvbnah" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -311,7 +243,53 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-1/" data-id="clhbtg9bs0015gg4b54hu8t4a" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-1/" data-id="clhbuu88i0011pa4b488u6wb4" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-5-3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-5-3/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-5-3/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>事务 undo</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
+<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-3/" data-id="clhbuu88j0013pa4bhjmp17wr" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -357,7 +335,53 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-6-1/" data-id="clhbtg9bs0018gg4bgkmn0l6z" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-6-1/" data-id="clhbuu88j0016pa4bdx5u7ukb" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-mysql/2023-02-17-mysql-5-4" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/03/mysql/2023-02-17-mysql-5-4/" class="article-date">
+  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-5-4/">如何阅读MySQL源代码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>事务 多版本控制</p>
+<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
+<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
+<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-5-4/" data-id="clhbuu88j0018pa4bfm07dlga" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -403,7 +427,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-6-2/" data-id="clhbtg9bt001agg4bhs1l17bm" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-6-2/" data-id="clhbuu88j001bpa4b9ww0fyg6" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -449,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-6-3/" data-id="clhbtg9bt001dgg4b89797gcb" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-6-3/" data-id="clhbuu88k001dpa4b5f8i80qq" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -495,53 +519,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-7-1/" data-id="clhbtg9bt001fgg4b2lkdb7sr" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-mysql/2023-02-17-mysql-7-2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/03/03/mysql/2023-02-17-mysql-7-2/" class="article-date">
-  <time class="dt-published" datetime="2023-03-02T16:00:00.000Z" itemprop="datePublished">2023-03-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/mysql/">mysql</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/03/03/mysql/2023-02-17-mysql-7-2/">如何阅读MySQL源代码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>binlog同步</p>
-<h2 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h2><p>mysql作为一个服务端程序，需要处理来自客户端的连接</p>
-<h3 id="主流连接管理"><a href="#主流连接管理" class="headerlink" title="主流连接管理"></a>主流连接管理</h3><h4 id="进程-线程-模式"><a href="#进程-线程-模式" class="headerlink" title="进程(线程)模式"></a>进程(线程)模式</h4><p>操作系统原生提供</p>
-<h4 id="进程管理连接"><a href="#进程管理连接" class="headerlink" title="进程管理连接"></a>进程管理连接</h4><h4 id="协程模式"><a href="#协程模式" class="headerlink" title="协程模式"></a>协程模式</h4><p>比如Golang的<code>goroutine</code>， java的<code>VirtualThread</code> 等，没一个连接一个协程</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-7-2/" data-id="clhbtg9bt001igg4b1owe5qmq" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/03/03/mysql/2023-02-17-mysql-7-1/" data-id="clhbuu88k001fpa4b0v191ri2" data-title="如何阅读MySQL源代码" class="article-share-link">Share</a>
       
       
       
@@ -596,7 +574,15 @@
       <ul>
         
           <li>
+            <a href="/2023/05/06/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
             <a href="/2023/05/06/2023-05-06-redis-zcount/">计算最近一段时间的总数量</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-0-0/">如何阅读MySQL源代码</a>
           </li>
         
           <li>
@@ -604,15 +590,7 @@
           </li>
         
           <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
             <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
-          </li>
-        
-          <li>
-            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
           </li>
         
       </ul>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>golang grpc response biz err | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="背景我们的服务调用提供的方式如下图 ![useful image](&#x2F;assets&#x2F;2023-02-10&#x2F;basic.png) 我们也遇到了服务层怎么返回错误到接入层产生了分歧，目前有的3种方案解决 通用方案err直接在err中返回，这里我们需要自定义err，并实现GRPCStatus方法 12345678910type ERR struct &amp;#123;    Co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="golang grpc response biz err">
+<meta property="og:url" content="http://example.com/2022/11/21/2023-02-10-grpc-biz-err/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="背景我们的服务调用提供的方式如下图 ![useful image](&#x2F;assets&#x2F;2023-02-10&#x2F;basic.png) 我们也遇到了服务层怎么返回错误到接入层产生了分歧，目前有的3种方案解决 通用方案err直接在err中返回，这里我们需要自定义err，并实现GRPCStatus方法 12345678910type ERR struct &amp;#123;    Co">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-02-17T05:38:53.955Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-2023-02-10-grpc-biz-err" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/21/2023-02-10-grpc-biz-err/" class="article-date">
+  <time class="dt-published" datetime="2022-11-20T16:00:00.000Z" itemprop="datePublished">2022-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/golang/">golang</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      golang grpc response biz err
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>我们的服务调用提供的方式如下图</p>
+<p>![useful image](&#x2F;assets&#x2F;2023-02-10&#x2F;basic.png)</p>
+<p>我们也遇到了服务层怎么返回错误到接入层产生了分歧，目前有的3种方案解决</p>
+<h3 id="通用方案"><a href="#通用方案" class="headerlink" title="通用方案"></a>通用方案</h3><h4 id="err"><a href="#err" class="headerlink" title="err"></a>err</h4><p>直接在err中返回，这里我们需要自定义err，并实现<code>GRPCStatus</code>方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> ERR <span class="keyword">struct</span> &#123;</span><br><span class="line">    Code <span class="type">uint32</span></span><br><span class="line">    Msg  <span class="type">string</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p ERR)</span></span> GRPCStatus() *status.Status &#123;</span><br><span class="line">    <span class="keyword">return</span> status.New(codes.Code(p.Code), p.Msg)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(p ERR)</span></span> Error() <span class="type">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> p.Msg</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在返回时使用</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *grpcServer)</span></span> SayHello(ctx context.Context, in *proto.HelloRequest) (*proto.HelloReply, <span class="type">error</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>, ERR&#123;</span><br><span class="line">        Code: <span class="number">100</span>_20_01,</span><br><span class="line">        Msg:  <span class="string">&quot;add_reach_max&quot;</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用这种方式有如下优缺点 </p>
+<p>优点：复用grpc标准的错误，简单方便</p>
+<p>缺点：耦合了grpc标准的错误，业务上需要区分是grpc的错误，还是业务错误，grpc gateway可能会修改code</p>
+<h4 id="message"><a href="#message" class="headerlink" title="message"></a>message</h4><figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">message </span><span class="title class_">BatchUserInfoResp</span> &#123;</span><br><span class="line">  RpcHeader header = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">repeated</span> UserInfo infos = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里需要引入</p>
+<figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">message </span><span class="title class_">RpcHeader</span> &#123;</span><br><span class="line">  <span class="type">int32</span> code = <span class="number">1</span>;</span><br><span class="line">  <span class="type">string</span> message = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="metadata-middleware"><a href="#metadata-middleware" class="headerlink" title="metadata+middleware"></a>metadata+middleware</h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/21/2023-02-10-grpc-biz-err/" data-id="clhbtg9bm0005gg4b6u90gjvx" data-title="golang grpc response biz err" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/11/21/2022-11-21-grpc-wrapper/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          golang grpc response wrapper
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/13/2022-10-13-golang-err/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">golang 业务 error封装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/algorithm/">algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/golang/">golang</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/05/06/2023-05-06-redis-zcount/">计算最近一段时间的总数量</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-1-1/">如何阅读MySQL源代码</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-2/">如何阅读MySQL源代码</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-1-2/">如何阅读MySQL源代码</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/03/mysql/2023-02-17-mysql-2-3/">如何阅读MySQL源代码</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

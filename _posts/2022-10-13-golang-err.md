@@ -9,11 +9,10 @@ categories: [golang]
 
 ---
 
-这是我的第一篇文章
-
 ## 问题产生
 
 ###
+
 在业务中，api或者rpc返回的数据通常如下格式
 
 ```
@@ -33,13 +32,12 @@ type Error struct {
 	msg  string
 }
 
+// 实现Error()方法
 func (p *mError) Error() string {
 	_, msg := GetErrorCodeMsg(p)
 	return msg
 }
 ```
-
-由于我们
 
 但是这会出现的一个问题是
 
@@ -48,7 +46,7 @@ func UserService() {
     _, err := json.Marshal()
     if err != nil {
     } // todo
-    _, err := dao.GetXX()
+    _, err = dao.GetXX()
     if err != nil {
     }
 }
@@ -59,11 +57,9 @@ func UserService() {
 
 ## 问题解决
 
-### kk
+### 方式一
 
 我们规范使用标准的`err`命名为`stdErr`, 业务的`err`命名为`bizErr`，但是出现的问题是历史大量代码，还是容易出错
-
-而
 
 ### 第二版
 

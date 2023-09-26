@@ -5,7 +5,7 @@ title:  "golang grpc response biz err"
 
 date:   2022-11-21
 
-categories: golang
+categories: [golang]
 
 ---
 

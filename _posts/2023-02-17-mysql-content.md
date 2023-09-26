@@ -5,7 +5,7 @@ title:  "目录"
 
 date:   2023-02-17
 
-categories: mysql
+categories: [mysql]
 
 ---
 

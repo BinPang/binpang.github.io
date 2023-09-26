@@ -5,7 +5,7 @@ title:  "golang 业务 error封装"
 
 date:   2022-10-13
 
-categories: golang
+categories: [golang]
 
 ---
 
